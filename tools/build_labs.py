@@ -34,7 +34,7 @@ import nbformat
 from nbformat.v4 import new_code_cell, new_markdown_cell, new_notebook
 
 ROOT = Path(__file__).resolve().parent.parent
-REPO = "YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+REPO = "abu85/ai-for-agri-bio"
 
 # id, executed when building the site? (False = needs internet/GPU, run in Colab)
 LABS = [

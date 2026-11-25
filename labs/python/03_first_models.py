@@ -24,7 +24,7 @@ from sklearn.inspection import permutation_importance
 from sklearn.metrics import (mean_squared_error, r2_score, accuracy_score,
                              confusion_matrix, ConfusionMatrixDisplay, roc_auc_score)
 
-REPO = "YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+REPO = "abu85/ai-for-agri-bio"
 
 
 def data_path(name):

@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-REPO = "YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+REPO = "abu85/ai-for-agri-bio"
 
 
 def data_path(name):

@@ -24,7 +24,7 @@ from sklearn.feature_selection import SelectKBest, f_classif
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import mean_squared_error, roc_auc_score
 
-REPO = "YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+REPO = "abu85/ai-for-agri-bio"
 
 
 def data_path(name):

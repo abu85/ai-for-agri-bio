@@ -13,8 +13,8 @@ project:
 website:
   title: "AI for Agriculturists & Biologists"
   description: "A hands-on workshop on machine learning, deep learning and LLMs for agricultural and biological research, with labs in Python and R."
-  site-url: "https://YOUR-GITHUB-USERNAME.github.io/ai-for-agri-bio/"
-  repo-url: "https://github.com/YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+  site-url: "https://abu85.github.io/ai-for-agri-bio/"
+  repo-url: "https://github.com/abu85/ai-for-agri-bio"
   repo-actions: [edit, issue]
   page-navigation: true
   reader-mode: true
@@ -33,7 +33,7 @@ website:
         text: Instructors
     right:
       - icon: github
-        href: "https://github.com/YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+        href: "https://github.com/abu85/ai-for-agri-bio"
         aria-label: GitHub repository
   sidebar:
     style: docked

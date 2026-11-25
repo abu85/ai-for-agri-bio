@@ -16,7 +16,7 @@ library(ggplot2)
 options(repr.plot.width = 8, repr.plot.height = 4.5, repr.plot.res = 110)
 theme_set(theme_minimal(base_size = 12))
 
-REPO <- "YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+REPO <- "abu85/ai-for-agri-bio"
 
 # Use the local data folder if it exists, otherwise download from GitHub
 data_path <- function(name) {

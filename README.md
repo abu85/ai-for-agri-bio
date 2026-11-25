@@ -2,7 +2,7 @@
 
 A two-day, hands-on workshop that takes agricultural and biological researchers from "what is AI?" to training, testing and critically judging machine-learning models — with **every lab in both Python and R**, and examples from agronomy, **population genetics** and **metagenomics**.
 
-**Website:** https://YOUR-GITHUB-USERNAME.github.io/ai-for-agri-bio/
+**Website:** https://abu85.github.io/ai-for-agri-bio/
 
 ## What's inside
 

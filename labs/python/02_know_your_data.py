@@ -18,7 +18,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 
-REPO = "YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+REPO = "abu85/ai-for-agri-bio"
 
 
 def data_path(name):

@@ -26,7 +26,7 @@ library(ggplot2)
 options(repr.plot.width = 8, repr.plot.height = 4.5, repr.plot.res = 110)
 theme_set(theme_minimal(base_size = 12))
 
-REPO <- "YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+REPO <- "abu85/ai-for-agri-bio"
 data_path <- function(name) {
   for (folder in c("data", "../data", "../../data")) {
     f <- file.path(folder, name)

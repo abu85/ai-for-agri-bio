@@ -25,7 +25,7 @@ except ImportError:  # e.g. in Colab
     subprocess.run([sys.executable, "-m", "pip", "install", "-q", "umap-learn"], check=True)
     import umap
 
-REPO = "YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+REPO = "abu85/ai-for-agri-bio"
 
 
 def data_path(name):

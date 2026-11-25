@@ -80,7 +80,7 @@ Commit the regenerated `notebooks/`, `_labs/` and `figures/` folders. GitHub Act
 
 ### Using your own GitHub account
 
-The Colab buttons and data links point to `YOUR-GITHUB-USERNAME/ai-for-agri-bio`. After creating your repository, run once:
+The Colab buttons and data links point to `abu85/ai-for-agri-bio`. After creating your repository, run once:
 
 ```bash
 python tools/set_repo.py your-username/your-repo-name
