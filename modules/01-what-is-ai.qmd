@@ -1,0 +1,66 @@
+---
+title: "1. What AI is (and isn't)"
+subtitle: "Day 1 · 09:30–10:30 · Lecture"
+---
+
+AI is a toolbox for finding patterns in data and using them to make predictions. It is not magic, and it does not understand biology. Knowing what each tool can and cannot do is the first skill this workshop builds.
+
+## The vocabulary
+
+```{mermaid}
+flowchart LR
+  AI["Artificial intelligence<br/><small>any system doing tasks we associate with intelligence</small>"]
+  ML["Machine learning<br/><small>learns patterns from examples instead of hand-written rules</small>"]
+  DL["Deep learning<br/><small>neural networks with many layers</small>"]
+  FM["Foundation models & LLMs<br/><small>huge networks pre-trained on vast data, then reused</small>"]
+  AI --> ML --> DL --> FM
+```
+
+| Term | What it means | Example from agriculture or biology |
+|---|---|---|
+| **Machine learning (ML)** | Algorithms that learn a mapping from inputs to outputs from examples | Predicting yield from soil, weather and variety |
+| **Supervised learning** | Learning from labelled examples (the answer is known for training data) | Classifying leaves as diseased or healthy |
+| **Unsupervised learning** | Finding structure without labels | Discovering population structure from SNPs |
+| **Deep learning** | Neural networks with many layers that learn their own features | Detecting wheat heads in drone images |
+| **Foundation model** | A large model pre-trained once, then adapted to many tasks | ESM-2 protein language model; AlphaFold |
+| **Large language model (LLM)** | A foundation model trained on text to predict the next word | Claude, ChatGPT or Gemini drafting code or summarising papers |
+
+## What AI already does in the life sciences
+
+- **Protein structure.** AlphaFold predicts 3D protein structures from sequence. Its developers, Demis Hassabis and John Jumper, shared the 2024 Nobel Prize in Chemistry with David Baker. The AlphaFold Database holds predictions for over 200 million proteins.
+- **Genomic selection.** Breeders have predicted breeding values from genome-wide markers since the early 2000s (Meuwissen, Hayes and Goddard, 2001). Ridge regression and GBLUP — machine learning by another name — are used every day in plant and animal breeding.
+- **Variant calling.** DeepVariant treats sequencing reads as images and uses a neural network to call SNPs and indels.
+- **Plant health.** Phone apps and drones classify diseases, weeds and pests from images.
+- **Ecology.** Camera-trap and acoustic monitoring use image and sound classifiers to identify species.
+- **Microbiomes.** Classifiers predict soil or gut status from community composition; k-mer methods assign millions of reads to taxa.
+
+## Machine learning versus the statistics you know
+
+| | Classical statistics | Machine learning |
+|---|---|---|
+| Main goal | **Inference:** is there an effect, how large, how certain? | **Prediction:** how well can we predict new cases? |
+| Typical model | Few variables, chosen by the researcher | Many variables; the algorithm finds the useful ones |
+| Judged by | p-values, confidence intervals, model fit | Performance on data the model has never seen |
+| Strength | Interpretable, causal reasoning with good design | Flexible, captures complex non-linear patterns |
+
+They overlap heavily. Linear regression is both. What changes is the question you ask.
+
+## What AI cannot do
+
+- **Learn what is not in the data.** A model trained on one region, season or population can fail on another.
+- **Separate cause from correlation.** A model will happily use a batch label or a site effect if it predicts the outcome.
+- **Replace experimental design.** Confounded experiments produce confounded models.
+- **Work reliably with tiny datasets.** Twenty samples and 20,000 genes is a recipe for false discoveries.
+- **Tell you when it is wrong.** Most models give confident answers even far outside their training data.
+
+::: {.callout-tip}
+## Discussion (5 minutes)
+Look at the problems the group named in the icebreaker. For each one: is it a prediction problem, a pattern-finding problem, or neither? What data would a model need?
+:::
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- Keep this session conversational. Ask who has used ChatGPT, Claude or similar tools, and for what.
+- Bring one success and one failure story from your own bioinformatics work. A failure caused by leakage or batch effects sets up Module 4 well.
+- Write the icebreaker problems on a board or shared document; the capstone (Module 10) returns to them.
+:::

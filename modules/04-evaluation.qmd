@@ -1,0 +1,53 @@
+---
+title: "4. Evaluating models honestly"
+subtitle: "Day 1 · 14:30–15:30 · Lecture + lab"
+---
+
+The most common mistake in applied machine learning is not a bad algorithm — it is a test set that is not truly independent of the training data. Biological data are full of hidden connections: plots share a site, plants share parents, samples share a sequencing run. Ignore them and every model looks better than it is.
+
+## Overfitting
+
+A flexible model can memorise the training data, noise included. Training error keeps falling while error on new data stops improving or gets worse. Simpler models, regularisation and more data all help. Only performance on held-out data tells you which side of the line you are on.
+
+## Leakage: when the test set isn't independent
+
+| Hidden connection | Example | Honest split |
+|---|---|---|
+| Same individual | several photos or time points of one plant | group by plant |
+| Same location | plots from one field or site | leave sites out |
+| Same season | plots from one year share weather | leave years out |
+| Relatives | full sibs in training and test sets | group by family |
+| Population structure | landraces differ in both genotype and trait | leave populations out, or report within-population accuracy |
+| Technical batch | sequencing run confounded with treatment | design balanced batches; test across batches |
+| Preprocessing | selecting features or normalising with all samples, labels included | do every label-dependent step inside the training folds |
+
+## Cross-validation
+
+**K-fold cross-validation** splits the data into k parts and uses each part once as the test set. **Grouped** cross-validation keeps every member of a group (site, family, field) in the same fold. **Leave-one-group-out** holds out one whole group at a time.
+
+The right scheme is the one that matches how the model will be used:
+
+- Predicting new plots at sites already in the trial network? Random folds can be fine.
+- Recommending varieties for a **new site**? Leave sites out.
+- Selecting seedlings from **new crosses**? Leave families out.
+- Applying a microbiome classifier to **a new farm**? Leave fields out — and check that batch is not doing the work.
+
+## Lab 04 — Evaluating models honestly
+
+{{< include ../_labs/04_honest_evaluation_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/04_honest_evaluation_python.md >}}
+
+## R
+{{< include ../_labs/04_honest_evaluation_r.md >}}
+:::
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- This is the session where a bioinformatician adds the most. Bring a real leakage story: related individuals across splits, one batch per condition, or feature selection before cross-validation.
+- Before running each comparison, ask the room to guess which scheme will look best and by how much.
+- The shuffled-label experiment is memorable. Ask: "How many published omics classifiers might have done this?"
+- Hand out the [AI claim checklist](../resources/checklist.qmd) at the end.
+:::

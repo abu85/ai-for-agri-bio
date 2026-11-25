@@ -1,0 +1,35 @@
+---
+title: "10. Capstone: plan your own AI project"
+subtitle: "Day 2 · 14:45–16:00 · Group work and pitches"
+---
+
+The capstone turns the workshop into a plan you can take home. In small groups, participants choose a real problem — ideally one from the Day 1 icebreaker board — and design an AI project on one page.
+
+## How it runs
+
+| Time | Activity |
+|---|---|
+| 5 min | Form groups of 3–4 around a shared interest; pick one problem |
+| 40 min | Fill in the [AI project canvas](../resources/project-canvas.qmd) |
+| 25 min | 3-minute pitch per group, 2 minutes of questions |
+| 5 min | Vote: most promising project, best evaluation plan |
+
+## What a strong plan has
+
+- **A sharp question.** "Predict *Fusarium* head blight risk per field, two weeks before flowering" beats "use AI for disease".
+- **Data that exist or can be collected**, with an honest count of samples, sites and seasons.
+- **A baseline** — what is done today, or the simplest possible model.
+- **An honest evaluation** that matches the real use: which groups must be kept apart (sites, years, families, batches)?
+- **Named risks:** confounding, missing populations, data ownership, what happens when the model is wrong.
+- **A first step for next month** — a pilot that is small enough to actually do.
+
+## Feedback questions for pitches
+
+1. What would convince you the model works on a new farm, season or population?
+2. What is the simplest model you would try first?
+3. What could the model learn that isn't biology (batch, site, photographer, date)?
+4. Who would use the result, and what would they do differently?
+
+## After the workshop
+
+Groups that want to take their plan further can bring it to the follow-up clinic (see the [Instructor notes](../instructors.qmd)). Keep the canvas: it is the outline of a project proposal.

@@ -1,0 +1,20 @@
+/*-- scss:defaults --*/
+$primary: #2f6b3f;          // leaf green
+$secondary: #6b5b3e;        // soil brown
+$info: #2c6e8f;
+$success: #3d8b4f;
+$warning: #c08a1e;
+$body-color: #22261f;
+$link-color: #2f6b3f;
+$navbar-bg: #1f3d2a;
+$navbar-fg: #f3f1e8;
+$sidebar-bg: #f7f6f0;
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$headings-font-weight: 650;
+$code-color: #7a3e1d;
+
+/*-- scss:rules --*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650&display=swap");
+
+h1.title { letter-spacing: -0.01em; }
+.subtitle { color: $secondary; }

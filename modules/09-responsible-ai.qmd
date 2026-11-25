@@ -1,0 +1,36 @@
+---
+title: "9. Responsible AI in the life sciences"
+subtitle: "Day 2 · 14:15–14:45 · Discussion"
+---
+
+A model that works on paper can still mislead, exclude or harm when it meets the real world. This session uses short cases to practise asking the right questions.
+
+## Five questions for any AI project
+
+1. **Reproducibility.** Are the data, code, software versions and random seeds shared, so someone else can get the same result? Are data FAIR (findable, accessible, interoperable, reusable)?
+2. **Representativeness.** Which crops, regions, breeds, populations, soils or seasons are missing from the training data? Who will the model fail for?
+3. **Validity.** Was the model tested the way it will be used — new sites, new seasons, new populations (Module 4)?
+4. **Ownership and consent.** Who owns farm, sensor and genomic data? Did farmers or communities agree to this use? Who benefits? For genetic resources, access-and-benefit-sharing rules such as the Nagoya Protocol may apply.
+5. **Cost and consequence.** What happens when the model is wrong? Who is accountable? Is the energy and computing cost justified by the benefit?
+
+## Case cards (small groups, 15 minutes)
+
+Each group takes one case, answers the five questions, and reports one key risk and one mitigation.
+
+**Case 1 — The disease app.** A start-up trains a crop-disease app on images from research stations in two countries and markets it to smallholder farmers across a continent. Recommendations include which pesticide to apply.
+
+**Case 2 — The yield model.** A cooperative pools yield-monitor and soil data from its members to train a model that recommends nitrogen rates. A large input supplier offers to fund the project in exchange for access to the data.
+
+**Case 3 — The genomic predictor.** A breeding programme trains a genomic prediction model on elite lines from one heterotic group and plans to use it to choose parents from landrace collections.
+
+**Case 4 — The microbiome test.** A company sells a soil-health score based on a microbiome classifier. The validation study sequenced all "healthy" reference soils in one run and all "degraded" soils in another.
+
+## Reading AI claims in papers and products
+
+Use the [AI claim checklist](../resources/checklist.qmd). The short version: How big and how independent was the test set? Was there a baseline? Are the data and code available? Would the result survive a test on a new site, season or population?
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- Case 4 maps directly onto Lab 04 Part C; Case 3 onto Lab 04 Part B; Case 1 onto Lab 7A.
+- Keep the reporting to two minutes per group. Collect the risks on a shared board and leave them visible for the capstone.
+:::

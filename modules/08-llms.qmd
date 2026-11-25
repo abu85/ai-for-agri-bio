@@ -1,0 +1,53 @@
+---
+title: "8. LLMs as research assistants"
+subtitle: "Day 2 · 13:00–14:00 · Lecture + lab"
+---
+
+Large language models are useful for code, summaries, data cleaning and explanations — and they are confidently wrong often enough that every output needs checking. The core skill is verification.
+
+## What an LLM is
+
+An LLM is a deep neural network trained on enormous amounts of text to predict the next word (more precisely, the next *token*). Further training on instructions and human feedback turns it into an assistant. It does not look facts up unless it is connected to a search tool or your documents, and it does not run code unless it has a code tool. It generates the most plausible continuation, which is usually — not always — correct.
+
+## Good uses in research
+
+| Task | Works well | Watch out for |
+|---|---|---|
+| Writing and debugging code | boilerplate, plotting, file parsing, explaining error messages | subtle logic bugs; outdated package functions |
+| Explaining methods | "Explain PERMANOVA as if I were an agronomist" | confident oversimplification |
+| Literature | summarising a paper you provide, suggesting search terms | **invented references**; missing recent work |
+| Data cleaning | standardising messy names, units and dates | silent changes to values |
+| Writing | improving clarity, translating, drafting emails | your own argument getting diluted |
+
+## Rules of thumb
+
+1. **Verify everything** that matters: test code with known answers, open every citation, recompute key numbers.
+2. **Give context:** your data format, a few example rows, the language and packages you use.
+3. **Ask for assumptions and tests**, not just code.
+4. **Protect data:** don't paste unpublished, personal, farmer or confidential breeding data into public tools. Use institution-approved tools or synthetic examples.
+5. **Disclose use** as your journal or institution requires, and stay responsible for the result.
+
+## Lab 08 — Trust, but verify
+
+{{< include ../_labs/08_llm_verification_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/08_llm_verification_python.md >}}
+
+## R
+{{< include ../_labs/08_llm_verification_r.md >}}
+:::
+
+## Extra exercises (with any LLM)
+
+1. **Reference check.** Ask an LLM for five key papers on genomic selection in wheat, with DOIs. Look each one up. How many exist, and are the details right?
+2. **Explain your own code.** Paste a short analysis script you wrote (no data) and ask for a line-by-line explanation. Is it correct?
+3. **Data cleaning.** Give an LLM a small, messy table of field notes (invented, not real farm data) and ask it to standardise variety names and units. Check every changed value.
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- Participants first try to find the bugs themselves, *before* running the test cells. Give them 10 minutes.
+- Each bug is realistic: case sensitivity, chained replacements, counting individuals instead of alleles, and the row/column axis error.
+- If the room has institutional LLM access, do the reference-check exercise live and tally the results on the board.
+:::

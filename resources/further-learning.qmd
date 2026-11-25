@@ -1,0 +1,37 @@
+---
+title: "Further learning"
+subtitle: "Where to go after the workshop"
+---
+
+## Books (free online where noted)
+
+| Book | Why read it | Language |
+|---|---|---|
+| James, Witten, Hastie, Tibshirani (and Taylor) — *An Introduction to Statistical Learning* ([statlearning.com](https://www.statlearning.com), free) | The clearest introduction to machine learning for people with a statistics background | R and Python editions |
+| Chollet — *Deep Learning with Python* | Intuitive introduction to deep learning by the creator of Keras | Python |
+| Chollet, Kalinowski and Allaire — *Deep Learning with R* | The same material for R users | R |
+| Géron — *Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow* | Practical and thorough | Python |
+| Kuhn and Silge — *Tidy Modeling with R* ([tmwr.org](https://www.tmwr.org), free) | Modern modelling workflow with tidymodels, including resampling done right | R |
+
+## Courses
+
+- [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) — short, free, conceptual.
+- [fast.ai — Practical Deep Learning for Coders](https://course.fast.ai) — free, hands-on deep learning in Python.
+- [The Carpentries](https://carpentries.org) — Software, Data and Library Carpentry lessons, including genomics and ecology; good for building coding foundations.
+
+## Tools mentioned in the workshop
+
+| Area | Tools |
+|---|---|
+| Machine learning | scikit-learn (Python); tidymodels, randomForest, ranger, glmnet (R) |
+| Deep learning | PyTorch, Keras/TensorFlow (Python); torch, keras3 (R) |
+| Genomic prediction & population genetics | rrBLUP, BGLR, sommer (R); PLINK; ADMIXTURE |
+| Microbiome & metagenomics | QIIME 2, DADA2, phyloseq, vegan, Kraken 2, scikit-bio |
+| Protein structure & sequence models | [AlphaFold Server](https://alphafoldserver.com), [AlphaFold DB](https://alphafold.ebi.ac.uk), ColabFold, [ESM-2 on Hugging Face](https://huggingface.co/facebook/esm2_t6_8M_UR50D) |
+| No-code | [Orange Data Mining](https://orangedatamining.com), [Teachable Machine](https://teachablemachine.withgoogle.com) |
+
+## Key papers referenced
+
+- Meuwissen, Hayes and Goddard (2001). Prediction of total genetic value using genome-wide dense marker maps. *Genetics* 157: 1819–1829.
+- Mohanty, Hughes and Salathé (2016). Using deep learning for image-based plant disease detection. *Frontiers in Plant Science* 7: 1419. [doi:10.3389/fpls.2016.01419](https://doi.org/10.3389/fpls.2016.01419)
+- Hughes and Salathé (2015). An open access repository of images on plant health to enable the development of mobile disease diagnostics. [arXiv:1511.08060](https://arxiv.org/abs/1511.08060)

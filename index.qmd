@@ -1,0 +1,81 @@
+---
+title: "AI for Agriculturists & Biologists"
+subtitle: "A two-day, hands-on workshop — from first principles to honest models, with every lab in Python and R"
+toc: false
+---
+
+This workshop takes agricultural and biological researchers from "what is AI?" to training, testing and critically judging machine-learning models on their own kind of data. No programming experience is required: every lab runs in the browser through Google Colab, and every lab comes in both **Python** and **R**.
+
+The examples come from the work participants do: field trials and yield, plant disease, genomic prediction and **population genetics**, soil **metagenomics**, transcriptomics, leaf images and protein sequences.
+
+## What you will be able to do
+
+1. Explain the difference between AI, machine learning, deep learning and large language models, with examples from biology and agriculture.
+2. Prepare biological data for machine learning: missing values, outliers, genotype QC, compositional microbiome counts.
+3. Train, evaluate and interpret classification and regression models.
+4. Spot the pitfalls that make models look better than they are: data leakage, relatives and population structure, site and batch effects.
+5. Use pre-trained models — image networks, AlphaFold, protein language models — without training from scratch.
+6. Use LLM assistants responsibly, and verify what they produce.
+7. Plan an AI project for a question from your own research.
+
+## The modules
+
+::: {.module-grid}
+::: {.module-card}
+#### [1. What AI is (and isn't)](modules/01-what-is-ai.qmd)
+<span class="tag">Day 1</span><span class="tag">Lecture</span>
+<p>Vocabulary, history, and real examples from fields and labs.</p>
+:::
+::: {.module-card}
+#### [2. Data is the foundation](modules/02-data.qmd)
+<span class="tag">Day 1</span><span class="tag">Lab</span>
+<p>Field trials, SNP genotype QC and microbiome counts.</p>
+:::
+::: {.module-card}
+#### [3. Your first models](modules/03-first-models.qmd)
+<span class="tag">Day 1</span><span class="tag">Lab</span>
+<p>Yield and disease prediction, genomic prediction, soil-health classifier.</p>
+:::
+::: {.module-card}
+#### [4. Evaluating models honestly](modules/04-evaluation.qmd)
+<span class="tag">Day 1</span><span class="tag">Lab</span>
+<p>Overfitting, site leakage, relatives, batch effects, selection bias.</p>
+:::
+::: {.module-card}
+#### [5. Finding structure](modules/05-unsupervised.qmd)
+<span class="tag">Day 1</span><span class="tag">Lab</span>
+<p>PCA, population structure, clustering, UMAP, beta diversity.</p>
+:::
+::: {.module-card}
+#### [6. Neural networks](modules/06-deep-learning.qmd)
+<span class="tag">Day 2</span><span class="tag">Lab</span>
+<p>From one neuron to a trained network, and when to use one.</p>
+:::
+::: {.module-card}
+#### [7. Images, sequences, proteins](modules/07-track-lab.qmd)
+<span class="tag">Day 2</span><span class="tag">Tracks</span>
+<p>Plant disease images; k-mer read classification; ESM-2 and AlphaFold.</p>
+:::
+::: {.module-card}
+#### [8. LLMs as research assistants](modules/08-llms.qmd)
+<span class="tag">Day 2</span><span class="tag">Lab</span>
+<p>Find the bugs in LLM-written bioinformatics code.</p>
+:::
+::: {.module-card}
+#### [9. Responsible AI](modules/09-responsible-ai.qmd)
+<span class="tag">Day 2</span><span class="tag">Discussion</span>
+<p>Reproducibility, bias, data ownership, reading AI claims.</p>
+:::
+::: {.module-card}
+#### [10. Capstone](modules/10-capstone.qmd)
+<span class="tag">Day 2</span><span class="tag">Group work</span>
+<p>Plan an AI project for a real problem and pitch it.</p>
+:::
+:::
+
+## How to use this site
+
+- **Participants:** start with [Setup](setup.qmd). Each module page has short notes followed by the lab. Switch between **Python** and **R** with the tabs; your choice is remembered across pages. Use the **Open in Colab** buttons to run a lab yourself.
+- **Instructors:** see the [Schedule](schedule.qmd) and the [Instructor notes](instructors.qmd) for timing, teaching tips and how to rebuild the labs.
+
+All datasets are simulated to look like real data — including the real problems — so they can be shared freely and every lesson works as intended. See [Datasets](resources/datasets.qmd).

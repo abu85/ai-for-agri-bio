@@ -1,0 +1,49 @@
+---
+title: "Schedule"
+subtitle: "Two days, about 40% lecture and 60% hands-on"
+---
+
+Day 1 ends with every participant having trained and evaluated a model on realistic data. Day 2 moves from building models to using existing ones well, and ends with each group planning an AI project of its own.
+
+## Day 1 — Foundations: data, models and honest evaluation
+
+| Time | Session | Type |
+|---|---|---|
+| 09:00–09:30 | Welcome and icebreaker: each person names one problem from their work | Discussion |
+| 09:30–10:30 | [1. What AI is (and isn't)](modules/01-what-is-ai.qmd) | Lecture |
+| 10:30–10:45 | Break | |
+| 10:45–12:00 | [2. Data is the foundation](modules/02-data.qmd) | Lecture + lab |
+| 12:00–13:00 | Lunch | |
+| 13:00–14:15 | [3. Your first models](modules/03-first-models.qmd) | Lab |
+| 14:15–14:30 | Break | |
+| 14:30–15:30 | [4. Evaluating models honestly](modules/04-evaluation.qmd) | Lecture + lab |
+| 15:30–16:15 | [5. Finding structure without labels](modules/05-unsupervised.qmd) | Lab |
+| 16:15–16:30 | Wrap-up: "muddiest point" cards | Discussion |
+
+## Day 2 — Deep learning, pre-trained models and LLMs
+
+| Time | Session | Type |
+|---|---|---|
+| 09:00–09:15 | Recap: answers to yesterday's muddiest points | Discussion |
+| 09:15–10:15 | [6. Neural networks from the inside](modules/06-deep-learning.qmd) | Lecture + demo + lab |
+| 10:15–10:30 | Break | |
+| 10:30–12:00 | [7. Choose your track: images, sequences, proteins](modules/07-track-lab.qmd) | Lab (parallel tracks) |
+| 12:00–13:00 | Lunch | |
+| 13:00–14:00 | [8. LLMs as research assistants](modules/08-llms.qmd) | Lecture + lab |
+| 14:00–14:15 | Break | |
+| 14:15–14:45 | [9. Responsible AI in the life sciences](modules/09-responsible-ai.qmd) | Discussion |
+| 14:45–16:00 | [10. Capstone: plan your own AI project](modules/10-capstone.qmd) | Group work + pitches |
+| 16:00–16:30 | Close: feedback survey, resources, next steps | Discussion |
+
+## Shorter and longer formats
+
+The modules are self-contained, so the course scales.
+
+| Format | Keep | Drop or shorten |
+|---|---|---|
+| Half day (3.5 h) | Modules 1, 4 (as a lecture), 6 (demo only), 8 | All coding labs; no capstone |
+| 1 day | Modules 1, 2, 3, 4, 8, and a 45-minute capstone | Modules 5, 7 and 9 become short lecture segments |
+| 2 days | Everything (this schedule) | — |
+| 6 weekly sessions of 2–3 h | Everything, plus work on participants' own data between sessions | The capstone becomes a final project presented in week 6 |
+
+Labs 02–05 each have three parts: **A** (agronomy), **B** (population genetics) and **C** (metagenomics). With a focused audience, run only the parts that match it.

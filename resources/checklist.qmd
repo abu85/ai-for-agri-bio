@@ -1,0 +1,40 @@
+---
+title: "Is this AI claim credible?"
+subtitle: "A one-page checklist for papers, preprints, products and your own work"
+---
+
+Use these questions whenever you read "our model achieves 95% accuracy". A "no" or "not stated" is not proof the result is wrong, but it is a reason for caution.
+
+## Data
+
+- [ ] Is the dataset described: where, when, how many samples, sites, seasons, populations?
+- [ ] Is the sample size reasonable for the number of features (e.g. not 30 samples and 10,000 genes without strong safeguards)?
+- [ ] Are technical factors (batch, instrument, date, operator) recorded and balanced across groups?
+- [ ] Are the data available, or is there a clear reason why not?
+
+## Evaluation
+
+- [ ] Was the model tested on data it never saw during training **or tuning**?
+- [ ] Were related samples (same plant, plot, site, family, patient, batch) kept on the same side of the split?
+- [ ] Does the test match the real use: new sites, new seasons, new populations, new devices?
+- [ ] Is there an **external** test set from a different source?
+- [ ] Were feature selection, normalisation and hyperparameter tuning done inside cross-validation?
+
+## Results
+
+- [ ] Is there a **baseline** (current practice, a simple model, or always predicting the majority class)?
+- [ ] Is the metric appropriate (e.g. not accuracy alone for unbalanced classes)?
+- [ ] Is uncertainty reported (confidence intervals, variation across folds or repeats)?
+- [ ] Do the important features make biological sense, or could they be proxies for site, batch or population?
+
+## Reproducibility
+
+- [ ] Is the code available, with software versions?
+- [ ] Could you, in principle, reproduce the main result?
+
+::: {.callout-tip}
+## The three questions to ask first
+1. How independent was the test set?
+2. What was the baseline?
+3. Would it work on a new site, season or population?
+:::

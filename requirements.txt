@@ -1,0 +1,20 @@
+# Python packages for the offline labs (02-06, 07B, 08) and for building the site
+numpy
+pandas
+scipy
+matplotlib
+scikit-learn
+umap-learn
+
+# Running and building notebooks
+jupyterlab
+nbformat
+nbclient
+ipykernel
+
+# Day 2 labs 07A and 07C (run in Colab, where these are preinstalled)
+# tensorflow
+# tensorflow-datasets
+# torch
+# transformers
+# requests

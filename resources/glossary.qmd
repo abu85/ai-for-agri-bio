@@ -1,0 +1,52 @@
+---
+title: "Glossary"
+---
+
+| Term | Meaning |
+|---|---|
+| **Accuracy** | Fraction of correct predictions. Misleading when classes are unbalanced. |
+| **Allele frequency** | Proportion of copies of an allele in a population: (2 × homozygotes + heterozygotes) / (2 × individuals). |
+| **Alpha diversity** | Diversity within one sample (e.g. richness, Shannon index). |
+| **AUC (ROC AUC)** | Probability that a random positive case gets a higher score than a random negative one. 0.5 = chance, 1 = perfect. |
+| **Baseline** | The simplest reasonable prediction (e.g. the mean, the majority class, current practice). Every model must beat it. |
+| **Batch effect** | Technical variation from processing samples in different groups (runs, kits, days). |
+| **Beta diversity** | Difference in community composition between samples (e.g. Bray–Curtis distance). |
+| **Bray–Curtis distance** | Dissimilarity between two communities based on abundances; 0 = identical, 1 = nothing shared. |
+| **CLR (centred log-ratio)** | Transform for compositional data: log of each value minus the mean log of the sample. |
+| **Classification** | Predicting a category (e.g. diseased or healthy). |
+| **Compositional data** | Data that sum to a constant (e.g. relative abundances), so parts are not independent. |
+| **Confusion matrix** | Table of predicted versus true classes. |
+| **Cross-validation** | Repeatedly splitting data into training and test parts to estimate performance on new data. |
+| **Data leakage** | Information from the test set reaching the model during training, making performance look better than it is. |
+| **Deep learning** | Machine learning with neural networks of many layers. |
+| **Embedding** | A vector of numbers that represents an item (protein, image, word) learned by a model. |
+| **Epoch** | One pass of a training algorithm through the whole training set. |
+| **Feature** | An input variable used for prediction. |
+| **Feature importance** | How much a model relies on each feature. Not the same as causation. |
+| **GBLUP / rrBLUP** | Standard genomic prediction models; rrBLUP is equivalent to ridge regression on markers. |
+| **Genomic prediction (selection)** | Predicting breeding values or phenotypes from genome-wide markers. |
+| **Grouped cross-validation** | Cross-validation that keeps related samples (same site, family, batch) in the same fold. |
+| **Hardy–Weinberg equilibrium (HWE)** | Expected genotype frequencies p², 2pq, q² under random mating. |
+| **Hyperparameter** | A setting chosen before training (e.g. number of trees, tree depth, learning rate). |
+| **k-mer** | A DNA or protein substring of length k. |
+| **k-means** | Clustering algorithm that groups samples around k centres. |
+| **LLM (large language model)** | A very large neural network trained on text to predict the next token. |
+| **MAF (minor allele frequency)** | Frequency of the less common allele at a SNP. |
+| **Naive Bayes** | A simple probabilistic classifier assuming features are independent; widely used for k-mer taxonomy. |
+| **Neural network** | A model built from layers of artificial neurons with learnable weights. |
+| **Overfitting** | Learning noise in the training data, so performance on new data is worse. |
+| **PCA / PCoA** | Dimension reduction: PCA from the data matrix, PCoA from a distance matrix. |
+| **PERMANOVA** | Permutation test for differences in multivariate composition between groups. |
+| **pLDDT** | AlphaFold's per-residue confidence score (0–100). |
+| **Population structure** | Genetic differences between subpopulations; can confound associations and predictions. |
+| **Predictive ability** | In genomic prediction, the correlation between predicted and observed values in a test set. |
+| **Random forest** | An ensemble of decision trees trained on random subsets of data and features. |
+| **Regression** | Predicting a number (e.g. yield). |
+| **Regularisation** | Penalising model complexity to reduce overfitting (e.g. ridge, weight decay, dropout). |
+| **RMSE** | Root mean squared error, in the units of the target. |
+| **Supervised learning** | Learning from examples with known answers. |
+| **Test set** | Data held back to measure performance, never used for training or tuning. |
+| **Transfer learning** | Reusing a model trained on one task as the starting point for another. |
+| **UMAP / t-SNE** | Non-linear methods for visualising high-dimensional data in 2D. |
+| **Unsupervised learning** | Finding structure in data without labels. |
+| **Wahlund effect** | Heterozygote deficit caused by pooling genetically different subpopulations. |

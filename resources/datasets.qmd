@@ -1,0 +1,44 @@
+---
+title: "Datasets"
+subtitle: "What the course data contain, and where to find real data"
+---
+
+All course datasets are **simulated** with `data/simulate_data.py` (fixed random seed, fully reproducible). They are built to behave like real data — including missing values, outliers, site effects, population structure, batch effects and contaminants — so every lesson works and the data can be shared freely. Genus names in the microbiome files are labels only, and the 16S-like sequences are synthetic.
+
+## Course datasets
+
+| File | Rows × columns | What it is | Used in |
+|---|---|---|---|
+| `crop_trials.csv` | 961 plots × 14 | Multi-site, multi-year variety trial: site, year, variety, N fertiliser, soil P/K/pH/organic matter, rainfall, temperature, irrigation, disease (0/1), yield (t/ha). Contains missing values, decimal-point typos and broken pH readings. | Labs 02, 03, 04, 06 |
+| `genotypes.csv` | 360 plants × 2,000 SNPs | Genotypes coded 0/1/2 (copies of the alternative allele), `NA` for missing. Three landraces × 12 full-sib families × 10 plants. Includes bad samples, high-missingness SNPs, monomorphic SNPs and SNPs with genotyping errors. | Labs 02, 03, 04, 05 |
+| `genotype_samples.csv` | 360 × 5 | Sample ID, landrace (population), family, plant height (cm, controlled by many QTL plus a landrace effect), days to flowering | Labs 02–05 |
+| `snp_info.csv` | 2,000 × 5 | SNP ID, chromosome, position, reference and alternative allele | Lab 03 |
+| `microbiome_counts.csv` | 144 samples × 200 ASVs | Amplicon read counts from soils in six fields, healthy vs diseased. Library sizes vary; two "reagent contaminant" genera are inflated in sequencing batch 2, which is confounded with soil status. | Labs 02, 03, 04, 05 |
+| `microbiome_metadata.csv` | 144 × 5 | Sample ID, field, soil status, sequencing batch, soil pH | Labs 02–05 |
+| `microbiome_taxonomy.csv` | 200 × 3 | ASV ID, phylum, genus | Labs 02–05 |
+| `rnaseq_counts.csv` | 2,000 genes × 24 samples | RNA-seq counts: control vs drought, wild type vs mutant, two sequencing batches (balanced design) | Lab 05 |
+| `rnaseq_metadata.csv` | 24 × 5 | Sample ID, condition, genotype, batch, replicate | Lab 05 |
+| `16s_reference.fasta` | 72 sequences | Reference database: 6 genera × 3 species × 4 strains, 400 bp, genus in the header | Lab 07B |
+| `16s_query_reads.fasta` | 660 reads | 150 bp reads from a "soil sample", with sequencing errors; 60 reads come from a genus missing from the reference | Lab 07B |
+| `16s_query_truth.csv` | 660 × 2 | The true genus of each read (available only because the data are simulated) | Lab 07B |
+
+## External data used in Day 2 labs
+
+| Lab | Source | Accessed through |
+|---|---|---|
+| 7A | [PlantVillage](https://www.tensorflow.org/datasets/catalog/plant_village): 54,303 leaf images, 38 classes | TensorFlow Datasets |
+| 7C | Plant protein sequences from [UniProt](https://www.uniprot.org) (reviewed entries) | UniProt REST API |
+| 7C | Predicted structures from the [AlphaFold Database](https://alphafold.ebi.ac.uk) | AlphaFold DB API |
+| 7C | [ESM-2 (8M parameters)](https://huggingface.co/facebook/esm2_t6_8M_UR50D) protein language model | Hugging Face `transformers` |
+
+## Real datasets for practice after the workshop
+
+| Topic | Where to look |
+|---|---|
+| Plant genotypes and phenotypes | [1001 Genomes (*Arabidopsis*)](https://1001genomes.org); your own breeding programme's data |
+| Gene expression | [Expression Atlas](https://www.ebi.ac.uk/gxa) and [NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/) |
+| Microbiomes | [Earth Microbiome Project](https://earthmicrobiome.org); [MGnify](https://www.ebi.ac.uk/metagenomics) |
+| Plant images | PlantVillage (above); search for field-condition datasets for your crop |
+| Proteins | [UniProt](https://www.uniprot.org); [AlphaFold Database](https://alphafold.ebi.ac.uk) |
+
+To regenerate the course data, run `python data/simulate_data.py` from the repository root.

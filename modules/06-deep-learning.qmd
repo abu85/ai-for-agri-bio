@@ -1,0 +1,51 @@
+---
+title: "6. Neural networks from the inside"
+subtitle: "Day 2 · 09:15–10:15 · Lecture + demo + lab"
+---
+
+Deep learning is built from one simple unit — the artificial neuron — repeated in layers. Its strength is learning useful features directly from raw images, sequences and text, so you don't have to design them by hand.
+
+## The ideas, without the maths
+
+- **Neuron:** multiply each input by a weight, add a bias, pass the sum through an activation function (e.g. ReLU or sigmoid).
+- **Layers:** many neurons side by side; layers stacked one after another. Early layers in an image network detect edges and textures, later layers detect leaves, lesions and spots.
+- **Training:** start with random weights, predict, measure the error, nudge every weight to reduce it (gradient descent with backpropagation). One pass through the training data is an **epoch**.
+- **Overfitting brakes:** weight decay, dropout, data augmentation, early stopping.
+- **Transfer learning:** reuse a network trained on millions of images or sequences and retrain only the last layer(s) on your data. This is how most biologists use deep learning.
+
+## When to use deep learning
+
+| Data | First choice | Why |
+|---|---|---|
+| Table of measurements (soil, weather, phenotypes) | Random forest or gradient boosting | Usually as good or better, with far less tuning |
+| Images (leaves, drones, microscopy) | Pre-trained CNN or vision transformer | Learns visual features you couldn't hand-design |
+| DNA, RNA or protein sequences | Pre-trained language model, or k-mer methods | Captures context and long-range patterns |
+| Text (papers, field notes) | Pre-trained LLM | Language understanding comes built in |
+
+## Live demo: Teachable Machine (10 minutes)
+
+[Teachable Machine](https://teachablemachine.withgoogle.com) trains an image classifier in the browser using transfer learning — no code.
+
+1. Choose **Image project → Standard image model**.
+2. Make two classes, e.g. *healthy leaf* and *damaged leaf*. Collect 20–30 webcam images of each, using real leaves or printed photos.
+3. Click **Train model** and test it live.
+4. Now break it: change the background, the lighting or the angle. Discuss why it fails — this sets up the "lab photos versus field photos" problem in Module 7.
+
+## Lab 06 — Neural networks from the inside
+
+{{< include ../_labs/06_neural_networks_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/06_neural_networks_python.md >}}
+
+## R
+{{< include ../_labs/06_neural_networks_r.md >}}
+:::
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- Spend most of the hour on the demo and the overfitting plot; the lab code is short.
+- Python uses scikit-learn's `MLPRegressor`; R uses `nnet` (one hidden layer). Both are fine for teaching the concepts. For real deep learning, Python users move to PyTorch or Keras, and R users to `torch` or `keras3`.
+- The key message: neural networks are not automatically better. On tabular data, the random forest wins here.
+:::

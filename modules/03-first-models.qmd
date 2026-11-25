@@ -1,0 +1,55 @@
+---
+title: "3. Your first models"
+subtitle: "Day 1 · 13:00–14:15 · Lab"
+---
+
+A supervised model learns from examples where the answer is known, then predicts the answer for new cases. Every supervised project follows the same recipe: split the data, train on one part, and measure performance on the part the model never saw.
+
+## The recipe
+
+1. **Define the target** (what to predict) and the **features** (what to predict it from).
+2. **Split** the data into a training set and a test set. Lock the test set away.
+3. **Train** one or more models on the training set.
+4. **Compare with a baseline** — the simplest possible prediction, such as the average.
+5. **Evaluate** on the test set, once, with a metric that matches your goal.
+6. **Interpret:** what did the model rely on? Does that make biological sense?
+
+## Two kinds of problem
+
+| | Regression | Classification |
+|---|---|---|
+| Target | a number | a category |
+| Examples | yield, plant height, days to flowering | diseased or healthy, species, genotype class |
+| Common metrics | RMSE (error in the target's units), R², correlation | accuracy, precision and recall, ROC AUC |
+
+**Accuracy can mislead.** If 75% of plots are healthy, a model that always says "healthy" is 75% accurate and useless. Always compare with the baseline, and look at the confusion matrix or ROC AUC.
+
+## Three models to know
+
+- **Linear and logistic regression.** Familiar, fast and interpretable. Struggle with non-linear effects unless you add them by hand.
+- **Ridge regression.** Linear regression that shrinks all effects towards zero, so it copes with more variables than samples. With SNPs as variables it is equivalent to **rrBLUP**, and closely related to **GBLUP**, the standard models of genomic selection.
+- **Random forest.** Hundreds of decision trees, each trained on a random subset of plots and variables, voting together. Handles non-linear effects and interactions with almost no tuning — an excellent first choice for tabular data.
+
+## Reading what a model learned
+
+**Feature importance** shows which inputs a model relies on. *Permutation importance* shuffles one feature at a time and measures how much worse the predictions get. Importance tells you what the model uses, not what causes the outcome: a variable can be important because it identifies the site, the batch or the population.
+
+## Lab 03 — Your first machine learning models
+
+{{< include ../_labs/03_first_models_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/03_first_models_python.md >}}
+
+## R
+{{< include ../_labs/03_first_models_r.md >}}
+:::
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- Stress the baseline every time a number appears.
+- The disease classifier is deliberately unimpressive: its accuracy roughly equals the baseline. Use it to discuss accuracy versus AUC.
+- Genomic prediction: ask breeders in the room which accuracies they see in practice and how they were measured. This sets up Module 4.
+- End by pointing at the "suspicious" results (rainfall importance, landrace clouds, contaminant taxa). Module 4 resolves all three.
+:::

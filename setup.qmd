@@ -1,0 +1,61 @@
+---
+title: "Setup"
+subtitle: "What to do before the workshop"
+---
+
+You need **a laptop with a modern browser and a Google account**. That's it — nothing to install. All labs run in [Google Colab](https://colab.research.google.com), a free notebook service that runs code on Google's computers.
+
+## Python or R?
+
+Every lab comes in both languages, with the same data, steps and results.
+
+| If you... | Choose |
+|---|---|
+| have used R for statistics (e.g. `lm`, `ggplot2`) | **R** |
+| have used Python, or want the language most deep-learning tools use | **Python** |
+| have never programmed | Either. **Python** is slightly more common in AI; **R** is common in biology and statistics. Pick what your group or lab uses. |
+
+You can switch at any time. On this site, the Python/R tabs remember your choice on every page.
+
+## Before the workshop (30 minutes)
+
+1. **Sign in to Colab** at <https://colab.research.google.com> with your Google account.
+2. **Open the Lab 02 notebook** from the [Lab 02 page](modules/02-data.qmd) using the *Open in Colab* button for your language.
+3. Click **Runtime → Run all**. If prompted, choose *Run anyway* (the notebook comes from GitHub, not from Google).
+4. Scroll down: you should see tables and plots. If so, you're ready.
+
+::: {.callout-tip}
+## R notebooks in Colab
+The R buttons open notebooks that already use Colab's R runtime. The first cell installs any missing packages, which can take a minute or two the first time.
+:::
+
+::: {.callout-note collapse="true"}
+## Optional: run the labs on your own computer
+
+Clone or download the repository from GitHub, then:
+
+**Python** (3.10 or newer):
+```bash
+pip install -r requirements.txt
+jupyter lab notebooks/python/
+```
+
+**R** (4.2 or newer):
+```r
+source("install.R")   # installs the packages used in the labs
+```
+Then open the scripts in `labs/r/` in RStudio and run them chunk by chunk, or open `notebooks/r/` in Jupyter with the R kernel.
+
+The lab scripts in `labs/` are plain `.py` and `.R` files split into cells with `# %%` markers. RStudio, VS Code, Positron and Spyder can all run them cell by cell.
+:::
+
+## Labs that need extra resources
+
+Two labs on Day 2 download large datasets or pre-trained models:
+
+- **Lab 07A (leaf images)** needs a GPU: in Colab, choose *Runtime → Change runtime type → T4 GPU*.
+- **Lab 07C (protein language models)** downloads sequences from UniProt and a model from Hugging Face. No GPU needed.
+
+## Bring a question
+
+For the capstone on Day 2, think of one problem from your own work where AI might help. If you have a small dataset (a spreadsheet is fine), bring it — but don't bring confidential or personal data.

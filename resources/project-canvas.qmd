@@ -1,0 +1,32 @@
+---
+title: "AI project canvas"
+subtitle: "Plan an AI project on one page — print it, or copy the table into a document"
+---
+
+Fill in each box in a few lines. If a box is hard to fill, that is the most useful thing you learn today.
+
+| Box | Your answer |
+|---|---|
+| **1. Problem** — What decision or task would the model help with? Who would use it? | |
+| **2. Question** — What exactly will the model predict or find? (target, unit, time horizon) | |
+| **3. Data available** — What data exist now? How many samples, sites, seasons, populations? | |
+| **4. Data needed** — What is missing? What would you collect, and how long would it take? | |
+| **5. Baseline** — What is done today, or what is the simplest possible prediction? | |
+| **6. Model** — Which approach would you try first? (e.g. random forest, ridge/GBLUP, pre-trained image model, k-mer classifier) | |
+| **7. Honest evaluation** — Which groups must be kept apart when testing? Which metric? What result would count as useful? | |
+| **8. Risks** — Confounders (batch, site, population), missing groups, data ownership, what happens when the model is wrong | |
+| **9. First step** — A pilot you could start next month | |
+
+## Example (abridged)
+
+| Box | Example answer |
+|---|---|
+| Problem | Agronomists decide whether to spray fungicide against *Septoria* in winter wheat |
+| Question | Probability of > 5% leaf area infected on flag leaf, predicted at growth stage 31 |
+| Data available | 6 years of disease scores from 25 trial sites; nearby weather stations; variety resistance ratings |
+| Data needed | Field-level sowing dates; more sites in the drier east |
+| Baseline | Current rule: spray if > 4 rain days in the past 2 weeks |
+| Model | Random forest on weather summaries + resistance rating; compare with logistic regression |
+| Honest evaluation | Leave one year out *and* leave sites out; ROC AUC and cost-weighted error vs the baseline rule |
+| Risks | Site and year effects; few eastern sites; weather station distance; who owns farm records |
+| First step | Assemble and clean the 6-year dataset; reproduce the baseline rule's performance |

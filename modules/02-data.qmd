@@ -1,0 +1,54 @@
+---
+title: "2. Data is the foundation"
+subtitle: "Day 1 · 10:45–12:00 · Lecture + lab"
+---
+
+A model can only be as good as the data it learns from. Most of the time in a real AI project goes into understanding and cleaning data — and the problems you find there decide whether the model can be trusted.
+
+## Types of biological data
+
+| Data type | Typical shape | Examples | Typical problems |
+|---|---|---|---|
+| **Tabular measurements** | rows = plots, animals or samples; columns = variables | field trials, soil tests, phenotypes | missing values, typos, unit mix-ups, outliers |
+| **Genotypes** | rows = individuals; columns = SNPs coded 0/1/2 | SNP arrays, GBS, whole-genome resequencing | missing calls, rare alleles, genotyping errors, population structure |
+| **Count tables** | rows = samples; columns = genes or taxa | RNA-seq, 16S and shotgun metagenomics | library size differences, many zeros, compositionality, batch effects |
+| **Sequences** | strings of A/C/G/T or amino acids | reads, genes, proteins | sequencing errors, incomplete reference databases |
+| **Images** | grids of pixels | leaf photos, drone and satellite images, microscopy | lighting, background, camera differences |
+| **Time series** | measurements over time | sensors, weather stations, growth curves | gaps, drift, irregular sampling |
+
+## Questions to ask of any dataset
+
+1. **How was it collected?** By whom, where, when, with which instrument or protocol?
+2. **What is one row?** A plant, a plot, a field, a sample, a read? Are some rows related to each other?
+3. **What is missing, and why?** Values missing at random are less dangerous than values missing for a reason (e.g. plots lost to drought).
+4. **Are the values possible?** A soil pH of 0 or a cereal yield of 66 t/ha are errors.
+5. **What technical factors could leave a fingerprint?** Sequencing batch, extraction kit, operator, date, camera.
+6. **Is the metadata complete?** Without batch, site and date columns, you cannot check for their effects later.
+
+## Three special cases
+
+**Genotype data.** Quality control is routine in population genetics: remove SNPs and individuals with many missing calls, filter rare alleles, and flag SNPs that deviate from Hardy–Weinberg equilibrium. But HWE tests on pooled populations are misleading: population structure alone creates a heterozygote deficit (the Wahlund effect).
+
+**Microbiome counts.** The number of reads per sample is set by the sequencer, not the soil, so raw counts are not comparable. Relative abundances fix this but create **compositional** data: they sum to one, so one taxon going up forces others down. Log-ratio transforms such as the **CLR** are a standard fix before machine learning.
+
+**Documentation.** Write down every cleaning decision. Treat the raw data as read-only and do all cleaning in code, so the steps can be repeated and reviewed.
+
+## Lab 02 — Know your data
+
+{{< include ../_labs/02_know_your_data_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/02_know_your_data_python.md >}}
+
+## R
+{{< include ../_labs/02_know_your_data_r.md >}}
+:::
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- Ask participants to *predict* problems before running each summary cell.
+- The HWE section is the highlight for population geneticists: ask why so many SNPs fail when pooled. Let them discover the Wahlund effect.
+- For the microbiome part, draw two samples with identical communities but different read depths on the board.
+- If time is short, skip Part B or C depending on the audience.
+:::

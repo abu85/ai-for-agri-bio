@@ -1,0 +1,23 @@
+# Quarto
+/_site/
+/.quarto/
+*_files/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+**/*.quarto_ipynb

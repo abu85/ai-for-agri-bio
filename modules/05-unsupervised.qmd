@@ -1,0 +1,46 @@
+---
+title: "5. Finding structure without labels"
+subtitle: "Day 1 · 15:30–16:15 · Lab"
+---
+
+Unsupervised learning finds patterns without being told the answer. Biologists use it to discover populations, cell types and community shifts — and, just as importantly, to spot batch effects and sample mix-ups before they ruin an analysis.
+
+## Dimension reduction
+
+- **PCA (principal component analysis)** finds the directions of greatest variation. It is linear, fast and its axes are interpretable: the % variance explained tells you how important each one is. Always colour a PCA by technical variables (batch, date, plate) as well as biological ones.
+- **PCoA (principal coordinates analysis)** does the same starting from any distance matrix — the standard way to plot microbiome beta diversity (e.g. Bray–Curtis distances).
+- **UMAP and t-SNE** are non-linear and good at revealing local clusters. Distances between clusters and cluster sizes are not meaningful, and the picture changes with the settings. Use them to look, not to measure.
+
+## Clustering
+
+- **k-means** splits samples into k groups around centres. You choose k; the silhouette score and elbow plots help.
+- **Hierarchical clustering** builds a tree of similarity — the dendrograms beside heatmaps.
+- In population genetics, model-based tools such as **ADMIXTURE** and **STRUCTURE** estimate ancestry proportions, allowing individuals to be mixtures of populations.
+
+## Where these methods show up
+
+| Field | Typical use |
+|---|---|
+| Population genetics | PCA of SNPs to show ancestry; top PCs as covariates in GWAS to avoid false associations |
+| Transcriptomics | PCA to check replicates, conditions and batch effects |
+| Metagenomics | Alpha diversity (within sample), beta diversity with PCoA, PERMANOVA to test group differences |
+| Single-cell biology | UMAP and clustering to find cell types |
+
+## Lab 05 — Finding structure without labels
+
+{{< include ../_labs/05_unsupervised_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/05_unsupervised_python.md >}}
+
+## R
+{{< include ../_labs/05_unsupervised_r.md >}}
+:::
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- The RNA-seq example has a balanced design, so batch correction works. Ask what would happen if all drought samples had been in batch 2.
+- In the UMAP figure, families form tight blobs while landraces are scattered. It is a good warning against over-reading UMAP.
+- R users get `vegan::adonis2` with a multi-term model; mention that Python's `scikit-bio` offers the same tests.
+:::

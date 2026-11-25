@@ -1,0 +1,85 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "modules/*.qmd"
+    - "resources/*.qmd"
+  resources:
+    - "data/*.csv"
+    - "data/*.fasta"
+    - "figures/"
+
+website:
+  title: "AI for Agriculturists & Biologists"
+  description: "A hands-on workshop on machine learning, deep learning and LLMs for agricultural and biological research, with labs in Python and R."
+  site-url: "https://YOUR-GITHUB-USERNAME.github.io/ai-for-agri-bio/"
+  repo-url: "https://github.com/YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+  repo-actions: [edit, issue]
+  page-navigation: true
+  reader-mode: true
+  search: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: schedule.qmd
+        text: Schedule
+      - href: setup.qmd
+        text: Setup
+      - href: resources/checklist.qmd
+        text: Resources
+      - href: instructors.qmd
+        text: Instructors
+    right:
+      - icon: github
+        href: "https://github.com/YOUR-GITHUB-USERNAME/ai-for-agri-bio"
+        aria-label: GitHub repository
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - section: "Start here"
+        contents:
+          - index.qmd
+          - schedule.qmd
+          - setup.qmd
+      - section: "Day 1 — Foundations"
+        contents:
+          - modules/01-what-is-ai.qmd
+          - modules/02-data.qmd
+          - modules/03-first-models.qmd
+          - modules/04-evaluation.qmd
+          - modules/05-unsupervised.qmd
+      - section: "Day 2 — Modern AI"
+        contents:
+          - modules/06-deep-learning.qmd
+          - modules/07-track-lab.qmd
+          - modules/08-llms.qmd
+          - modules/09-responsible-ai.qmd
+          - modules/10-capstone.qmd
+      - section: "Resources"
+        contents:
+          - resources/checklist.qmd
+          - resources/project-canvas.qmd
+          - resources/glossary.qmd
+          - resources/further-learning.qmd
+          - resources/datasets.qmd
+          - instructors.qmd
+  page-footer:
+    left: "AI for Agriculturists & Biologists · Content CC BY 4.0, code MIT"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    toc-title: "On this page"
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    link-external-newwindow: true
+    smooth-scroll: true

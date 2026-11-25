@@ -1,0 +1,89 @@
+---
+title: "Instructor notes"
+subtitle: "Running the workshop, and maintaining this site"
+---
+
+## Before the workshop
+
+| When | Task |
+|---|---|
+| 3–4 weeks before | Send the pre-workshop survey (below) and the [Setup](setup.qmd) page |
+| 2 weeks before | Group participants by experience; decide on Python/R split and Day 2 tracks |
+| 1 week before | Optional 60-minute online session: Colab basics, run Lab 02 together |
+| 2–3 days before | **Run every lab in Colab, in both languages** — especially 7A and 7C, which rely on external services |
+| Day before | Download a copy of the `data/` folder to a USB stick in case of Wi-Fi problems |
+
+**Pre-workshop survey (5 questions)**
+
+1. Field: crop science, animal science, plant biology, microbiology, ecology, molecular biology, other
+2. Coding experience: none / some R / some Python / comfortable
+3. Data types you work with: field trials, sensors/drones, images, sequences, genotypes, omics, other
+4. One problem you hope AI could help with
+5. Have you used ChatGPT, Claude or similar tools for work?
+
+## During the workshop
+
+- **Helpers:** one per 8 participants, ideally covering both Python and R.
+- **Stuck / done signal:** coloured sticky notes on laptops (red = stuck, green = done).
+- **Live coding:** type slowly, narrate, and make (and fix) mistakes on purpose.
+- **Pair programming** works well for mixed groups: one Python and one R user can compare results — they should match.
+- **Muddiest point cards** at the end of Day 1; answer them first thing on Day 2.
+- **No-code fallback:** [Orange Data Mining](https://orangedatamining.com) reproduces Labs 03–05 with drag and drop for anyone who struggles with code.
+
+## Lab timing guide
+
+| Lab | Core (must do) | Optional | Typical time |
+|---|---|---|---|
+| 02 | Part A, Part C | Part B (or B instead of C for geneticists) | 45 min |
+| 03 | Part A, one of B/C | the other of B/C | 60 min |
+| 04 | Part A leakage, Part C batch | overfitting curve, Part B, selection leakage | 50 min |
+| 05 | Part B or C | Part A | 40 min |
+| 06 | Sections 1, 3 | 2, 4 | 30 min |
+| 07 | one track | — | 80 min |
+| 08 | Functions 1–3 | Function 4, extra exercises | 40 min |
+
+## After the workshop
+
+- Share the site link, slides and a feedback survey with pre/post confidence ratings (1–5) for each learning outcome.
+- Set up a shared channel or mailing list for one to two months.
+- Offer an online clinic 4–6 weeks later where participants bring progress on their own data or capstone plans.
+
+## Maintaining this site
+
+### How it is built
+
+```
+labs/python/*.py, labs/r/*.R      ← the single source of every lab (edit these)
+        │  python tools/build_labs.py
+        ├── notebooks/{python,r}/*.ipynb   Colab notebooks (no outputs)
+        └── _labs/*.md + figures/labs/     executed outputs, included in the pages
+modules/*.qmd                      ← lecture notes; each includes its lab
+data/simulate_data.py              ← regenerates every dataset
+```
+
+The lab scripts use `# %%` cell markers, so they also run cell by cell in RStudio, Positron, VS Code or Spyder.
+
+### Rebuilding after editing a lab
+
+You need Python with `requirements.txt`, R with `install.R`, and the R Jupyter kernel (`IRkernel::installspec()` in R).
+
+```bash
+python tools/build_labs.py              # all labs (about 4 minutes)
+python tools/build_labs.py --only 04    # just Lab 04
+python tools/build_labs.py --no-execute # notebooks only, no outputs
+quarto preview                          # view the site locally
+```
+
+Labs 7A and 7C are not executed during the build (they need a GPU and internet), so their pages show code without outputs.
+
+Commit the regenerated `notebooks/`, `_labs/` and `figures/` folders. GitHub Actions then renders and publishes the site; it does not need Python or R.
+
+### Using your own GitHub account
+
+The Colab buttons and data links point to `YOUR-GITHUB-USERNAME/ai-for-agri-bio`. After creating your repository, run once:
+
+```bash
+python tools/set_repo.py your-username/your-repo-name
+```
+
+and commit the changes.

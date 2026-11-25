@@ -1,0 +1,64 @@
+---
+title: "7. Choose your track: images, sequences, proteins"
+subtitle: "Day 2 · 10:30–12:00 · Lab in parallel tracks"
+---
+
+Participants split into two tracks by interest. Both tracks use models or methods that someone else built and trained, which is how most researchers use AI.
+
+| Track | For | Labs | Needs |
+|---|---|---|---|
+| **A — Images** | agronomists, plant pathologists, ecologists | 7A: plant disease recognition with transfer learning | Colab with GPU |
+| **B — Sequences and proteins** | molecular biologists, microbiologists, geneticists | 7B: k-mer classification of metagenomic reads<br>7C: protein language models and AlphaFold | 7B runs anywhere; 7C needs internet |
+
+If your group is mostly from one side, drop the tracks and run the matching lab for everyone.
+
+## Track A — Plant disease images
+
+Deep networks reach very high accuracy on curated image collections, but performance can collapse under field conditions. In the study that popularised the PlantVillage dataset, a network reached 99.35% accuracy on held-out PlantVillage images but 31.4% on leaf images collected from other sources under different conditions ([Mohanty, Hughes and Salathé, 2016](https://doi.org/10.3389/fpls.2016.01419)). The lab reproduces the first number and asks how you would fix the second.
+
+{{< include ../_labs/07a_plant_disease_images_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/07a_plant_disease_images_python.md >}}
+
+## R
+{{< include ../_labs/07a_plant_disease_images_r.md >}}
+:::
+
+## Track B, part 1 — Classifying metagenomic reads
+
+Assigning reads to taxa is the first step of every metagenomics analysis. The RDP classifier, QIIME 2's classifier and Kraken 2 all compare short DNA words (k-mers) with a reference database. You will build one from scratch and see what happens to reads from a genus that is missing from the database.
+
+{{< include ../_labs/07b_kmer_taxonomy_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/07b_kmer_taxonomy_python.md >}}
+
+## R
+{{< include ../_labs/07b_kmer_taxonomy_r.md >}}
+:::
+
+## Track B, part 2 — Protein language models and AlphaFold
+
+Protein language models such as ESM-2 learn from hundreds of millions of sequences and turn any protein into a vector of numbers (an embedding) that captures family, structure and function. AlphaFold predicts 3D structures with a per-residue confidence score. DNA language models trained on genomes, including plant genomes, are developing quickly, but the same rules apply: compare with a simple baseline, and test on truly new sequences.
+
+{{< include ../_labs/07c_protein_language_models_links.md >}}
+
+::: {.panel-tabset group="language"}
+## Python
+{{< include ../_labs/07c_protein_language_models_python.md >}}
+
+## R
+{{< include ../_labs/07c_protein_language_models_r.md >}}
+:::
+
+::: {.callout-note collapse="true"}
+## Instructor notes
+- **Test Labs 7A and 7C in Colab a few days before the workshop.** They depend on external services (TensorFlow Datasets, UniProt, AlphaFold DB, Hugging Face) that can change.
+- 7A: training 3 epochs on 20% of PlantVillage takes a few minutes on a T4 GPU. Start the training cell, then discuss while it runs. The R version first installs the Python TensorFlow backend, which takes 5–10 minutes; have R users run the setup cell during the break.
+- Ask Track A participants to bring a phone photo of a real leaf from a field or garden to test the model.
+- 7B runs in seconds and needs no internet once the data are loaded. It is a good fallback if Wi-Fi fails.
+- 7C: the dehydrin vs aquaporin pLDDT comparison is a nice bridge to the drought RNA-seq example from Lab 05.
+:::

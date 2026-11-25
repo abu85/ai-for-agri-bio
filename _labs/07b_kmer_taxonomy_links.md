@@ -1,0 +1,3 @@
+::: {.lab-links}
+[Open Python notebook in Colab](https://colab.research.google.com/github/YOUR-GITHUB-USERNAME/ai-for-agri-bio/blob/main/notebooks/python/07b_kmer_taxonomy.ipynb){.btn .btn-sm .btn-primary} [Open R notebook in Colab](https://colab.research.google.com/github/YOUR-GITHUB-USERNAME/ai-for-agri-bio/blob/main/notebooks/r/07b_kmer_taxonomy.ipynb){.btn .btn-sm .btn-primary} [Python script](https://github.com/YOUR-GITHUB-USERNAME/ai-for-agri-bio/blob/main/labs/python/07b_kmer_taxonomy.py){.btn .btn-sm .btn-outline-secondary} [R script](https://github.com/YOUR-GITHUB-USERNAME/ai-for-agri-bio/blob/main/labs/r/07b_kmer_taxonomy.R){.btn .btn-sm .btn-outline-secondary}
+:::
